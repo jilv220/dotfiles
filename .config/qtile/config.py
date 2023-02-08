@@ -261,7 +261,7 @@ keys = [
 groups = []
 
 # FOR QWERTY KEYBOARDS
-group_names = ["1", "2", "3", "4", "5", "6", "7",]
+group_names = ["1", "2", "3", "4", "5", "6", "7", "8"]
 
 # FOR AZERTY KEYBOARDS
 #group_names = ["ampersand", "eacute", "quotedbl", "apostrophe", "parenleft", "section", "egrave", "exclam", "ccedilla", "agrave",]
@@ -270,7 +270,7 @@ group_names = ["1", "2", "3", "4", "5", "6", "7",]
 #group_labels = ["1 ", "2 ", "3 ", "4 ", "5 ", "6 ", "7 ", "8 ", "9 ", "0",]
 #group_labels = ["α", "β", "γ", "δ", "ε", "ζ", "η", "θ", "ι", "κ",]
 #group_labels = ["", "", "", "", "",]
-group_labels = ["Web", "Dev", "Game", "Work", "Agenda", "Chat", "Music",]
+group_labels = ["Web", "Dev", "Other", "Game", "Work", "Agenda", "Chat", "Music",]
 
 group_layouts = ["monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "treetab", "floating",]
 #group_layouts = ["monadtall", "matrix", "monadtall", "bsp", "monadtall", "matrix", "monadtall", "bsp", "monadtall", "monadtall",]
