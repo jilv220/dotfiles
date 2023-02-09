@@ -12,6 +12,7 @@ function run {
 #starting utility applications at boot time
 lxsession &
 run nm-applet &
+cbatticon -u 5 &
 run volctl &
 numlockx on &
 blueman-applet &
