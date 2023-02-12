@@ -1,0 +1,152 @@
+configuration {
+ modi: "drun,window,ssh,combi";
+ combi-modi: "window,drun,ssh";
+ show-icons: true;
+ combi-hide-mode-prefix: true;
+}
+
+* {
+    /* Dracula theme colour palette */
+    drac-cur: #44475a;
+    drac-fgd: #f8f8f2;
+    drac-grn: #50fa7b;
+    drac-red: #ff5555;
+
+    sweet-bgd: #0c0e14;
+    sweet-blk: #111111;
+    sweet-fgd: #ffffff;
+    sweet-cya: #00e8c6;
+    sweet-gry: #b9c3ce;
+    sweet-pur:#c50ed2;
+
+    font: "Noto Sans Bold 12";
+
+    foreground: @sweet-fgd;
+    background-color: @sweet-bgd;
+    active-background: @sweet-pur;
+    urgent-background: @drac-red;
+    urgent-foreground: @sweet-bgd;
+    
+    selected-background: @active-background;
+    selected-urgent-background: @urgent-background;
+    selected-active-background: @active-background;
+    separatorcolor: @active-background;
+    bordercolor: @sweet-blk;
+}
+
+#window {
+    background-color: @background-color;
+    border:           2;
+    border-radius:    10;
+    border-color: @bordercolor;
+    /* padding:          5; */
+}
+#mainbox {
+    border:  0;
+    padding: 5;
+}
+#message {
+    border:       1px dash 0px 0px ;
+    border-color: @separatorcolor;
+    padding:      1px ;
+}
+#textbox {
+    text-color: @foreground;
+}
+#listview {
+    /* fixed-height: true; */
+    lines:        10;
+    border:       2px dash 0px 0px ;
+    border-color: @bordercolor;
+    spacing:      5px;
+    scrollbar:    false;
+    padding:      0 2px 2px 0 ;
+}
+#element {
+    border:  0;
+    border-radius: 4px;
+    padding: 4px 2px;
+}
+#element.normal.normal {
+    background-color: @background-color;
+    text-color:       @foreground;
+}
+#element.normal.urgent {
+    background-color: @urgent-background;
+    text-color:       @urgent-foreground;
+}
+#element.normal.active {
+    background-color: @active-background;
+    text-color:       @background-color;
+}
+#element.selected.normal {
+    background-color: @selected-background;
+    text-color:       @foreground;
+}
+#element.selected.urgent {
+    background-color: @selected-urgent-background;
+    text-color:       @foreground;
+}
+#element.selected.active {
+    background-color: @selected-active-background;
+    text-color:       @background-color;
+}
+#element.alternate.normal {
+    background-color: @background-color;
+    text-color:       @foreground;
+}
+#element.alternate.urgent {
+    background-color: @urgent-background;
+    text-color:       @foreground;
+}
+#element.alternate.active {
+    background-color: @active-background;
+    text-color:       @foreground;
+}
+#scrollbar {
+    width:        2px ;
+    border:       0;
+    handle-width: 8px ;
+    padding:      0;
+}
+#sidebar {
+    border:       2px dash 0px 0px ;
+    border-color: @separatorcolor;
+}
+#button.selected {
+    background-color: @selected-background;
+    text-color:       @foreground;
+}
+#inputbar {
+    spacing:    0;
+    text-color: @foreground;
+    padding:    1px ;
+}
+#case-indicator {
+    spacing:    0;
+    text-color: @foreground;
+}
+#entry {
+    spacing:    0;
+    text-color: @sweet-fgd;
+    placeholder: "Search...";
+    placeholder-color: @sweet-gry;
+}
+#prompt {
+    spacing:    0;
+    text-color: @drac-grn;
+    padding:    0 0 2px 0;
+}
+#inputbar {
+    children:   [ prompt,textbox-prompt-colon,entry,case-indicator ];
+}
+#textbox-prompt-colon {
+    expand:     false;
+    str:        ":";
+    margin:     0px 0.3em 0em 0em ;
+    text-color: @drac-grn;
+}
+element-text, element-icon {
+    background-color: inherit;
+    text-color: inherit;
+}

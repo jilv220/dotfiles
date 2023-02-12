@@ -16,7 +16,7 @@ menu_padding_top     = 5
 menu_padding_right   = 2
 menu_padding_bottom  = 5
 menu_padding_left    = 2
-menu_radius          = 6
+#menu_radius          = 6
 menu_border          = 1
 menu_halign          = left
 menu_valign          = top
@@ -32,7 +32,7 @@ sub_hover_action     = 1
 item_margin_y        = 5
 item_height          = 30
 item_padding_x       = 8
-item_radius          = 0
+item_radius          = 4
 item_border          = 0
 #item_halign         = left
 

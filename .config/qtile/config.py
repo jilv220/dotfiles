@@ -100,7 +100,7 @@ keys = [
     Key([mod], "f", lazy.next_layout()),
     Key([mod], "q", lazy.window.kill()),
     Key([mod], "v", lazy.spawn('pavucontrol')),
-    Key([mod], "a", lazy.spawn(f"dmenu_run -i -nb {colors[20][0]} -nf {colors[7][0]} -sb {colors[7][0]} -sf {colors[20][0]} -fn 'NotoMonoRegular:bold:pixelsize=20'")),
+    Key([mod], "a", lazy.spawn('rofi -show drun')),
     Key([mod], "Escape", lazy.spawn('xkill')),
     Key([mod], "t", lazy.spawn(myTerm)),
     Key([mod], "e", lazy.spawn('pcmanfm')),
