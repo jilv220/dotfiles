@@ -431,9 +431,19 @@ def init_widgets_list():
                          ),
 
                 spacer(),
+                widget.Backlight(
+                        fontsize=14,
+                        background=colors[15],
+                        backlight_name="amdgpu_bl0",
+                        fmt=" brightness : {} ",
+                        step=5,
+                        change_command="brightnessctl s {0}%"
+                        ),
+
+                spacer(),
                 widget.Clock(
                         foreground = colors[9],
-                        background = colors[15],
+                        background = colors[19],
                         fontsize = 14,
                         format=" %a - %m/%d/%Y - %H:%M %p "
                         ),

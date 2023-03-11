@@ -12,7 +12,7 @@ function run {
 #starting utility applications at boot time
 lxsession &
 run nm-applet &
-cbatticon -u 5 &
+cbatticon -u 5 -n &
 run volctl &
 numlockx on &
 blueman-applet &
@@ -21,7 +21,8 @@ blueman-applet &
 picom --config .config/picom/picom-blur.conf --experimental-backends &
 #/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 dunst &
-feh --randomize --bg-fill /usr/share/wallpapers/garuda-wallpapers/*
+#feh --randomize --bg-fill /usr/share/wallpapers/garuda-wallpapers/*
+betterlockscreen -w
 #starting user applications at boot time
 run volumeicon &
 #run discord &
