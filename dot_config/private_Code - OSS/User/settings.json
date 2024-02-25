@@ -177,6 +177,26 @@
             "commands": [
                 "editor.action.showDefinitionPreviewHover"
             ]
+        },
+        {
+            "before": [
+                "<C-u>"
+            ],
+            "after": [
+                "<C-u>",
+                "z",
+                "z"
+            ]
+        },
+        {
+            "before": [
+                "<C-d>"
+            ],
+            "after": [
+                "<C-d>",
+                "z",
+                "z"
+            ]
         }
     ],
     "vim.visualModeKeyBindings": [
