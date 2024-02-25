@@ -1,0 +1,74 @@
+[
+  {
+    "name": "batch",
+    "comment": "tasks under system.slice or tasks with nice value > 10",
+    "matches": [
+      [
+        {
+          "CgroupPrefix": "system.slice/"
+        }
+      ],
+      [
+        {
+          "NiceAbove": 10
+        }
+      ]
+    ],
+    "kind": {
+      "Confined": {
+        "cpus_range": [
+          0,
+          2
+        ],
+        "util_range": [
+          0.8,
+          0.9
+        ]
+      }
+    }
+  },
+  {
+    "name": "interactive",
+    "comment": "tasks under user.slice with nice value < -3",
+    "matches": [
+      [
+        {
+          "CgroupPrefix": "user.slice/"
+        },
+        {
+          "NiceBelow": -3
+        }
+      ]
+    ],
+    "kind": {
+      "Grouped": {
+        "cpus_range": [
+          1,
+          2
+        ],
+        "util_range": [
+          0.2,
+          0.6
+        ],
+        "preempt": true
+      }
+    }
+  },
+  {
+    "name": "catch-all",
+    "comment": "the rest, catch all",
+    "matches": [
+      []
+    ],
+    "kind": {
+      "Grouped": {
+        "cpus_range": null,
+        "util_range": [
+          0.5,
+          0.6
+        ],
+        "preempt": false
+      }
+    }
+  }
+]
