@@ -5,6 +5,7 @@ import { NotificationPopups } from "notifications";
 import { Power, PowerBox } from "power";
 import { sysTray } from "systray";
 import { Time, CalendarMenu } from "time";
+import { Applist } from "widgets/Applist";
 
 export const PANEL_MARGIN_Y = 44;
 
@@ -16,7 +17,7 @@ const Bar = (monitor: number = 0) => Widget.Window({
     child: Widget.CenterBox({
         start_widget: Widget.Box({
             children: [
-                Workspaces()
+                Workspaces(),
             ]
         }),
         center_widget: Widget.Box({
@@ -38,12 +39,28 @@ const Bar = (monitor: number = 0) => Widget.Window({
     }),
 })
 
+const Panel = (monitor: number = 0) => Widget.Window({
+    monitor,
+    name: `panel${monitor}`,
+    anchor: ['bottom', 'left', 'right'],
+    exclusivity: 'exclusive',
+    child: Widget.CenterBox({
+        center_widget: Widget.Box({
+            spacing: 8,
+            children: [
+                Applist()
+            ]
+        })
+    }),
+})
+
 export const agsConf = App.config({
     onConfigParsed: () => {
 
     },
     windows: [
         Bar(),
+        Panel(),
         CalendarMenu(),
         AudioMenu(),
         BatteryBox(),

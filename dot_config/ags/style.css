@@ -5,12 +5,25 @@ window.bar {
 
 .popup-window .window-content {
     background-color: @theme_bg_color;
+    color: @theme_fg_color;
 }
 
+/* 
+Have to reset the ugly gtk button background and border
+https://github.com/Alexays/Waybar/issues/60#issuecomment-1604253114 
+*/
 button {
     min-width: 0;
     padding-top: 6px;
     padding-bottom: 6px;
+    border-color: transparent;
+    box-shadow: none;
+    background: @theme_bg_color;
+    border: none;
+}
+
+button:hover {
+    background: @theme_bg_color;
     border-color: transparent;
 }
 
@@ -31,6 +44,28 @@ label {
 .workspaces button.focused {
     background: @theme_selected_bg_color;
     color: @theme_bg_color;
+}
+
+.applist {
+    min-height: 64px;
+}
+
+.applist .panel-button {
+    background: none;
+}
+
+.applist .indicator {
+    background-color: @theme_fg_color;
+    min-width: 6px;
+    min-height: 6px;
+    border-radius: 9999px;
+}
+
+.applist .active {
+    background-color: @theme_base_color;
+    /* min-width: 6px;
+    min-height: 6px;
+    border-radius: 9999px; */
 }
 
 .client-title {
