@@ -3,6 +3,10 @@ window.bar {
     color: @theme_fg_color;
 }
 
+.popup-window .window-content {
+    background-color: @theme_bg_color;
+}
+
 button {
     min-width: 0;
     padding-top: 6px;

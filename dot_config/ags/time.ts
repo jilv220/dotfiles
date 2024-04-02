@@ -1,3 +1,5 @@
+import PopupWindow from "widgets/PopupWindow";
+
 const WINDOW_NAME = 'calendar';
 
 const time = Variable('', {
@@ -15,16 +17,12 @@ const calendar = Widget.Calendar({
     },
 })
 
-export const CalendarBox = (monitor = 0) => Widget.Window({
-    monitor,
+export const CalendarMenu = () => PopupWindow({
     name: WINDOW_NAME,
-    anchor: ['top'],
-    exclusivity: 'ignore',
-    keymode: "none",
-    layer: 'overlay',
-    margins: [44, 0],
+    exclusivity: "exclusive",
+    transition: 'none',
+    layout: 'top-center',
     child: calendar,
-    visible: false
 })
 
 export function Time() {

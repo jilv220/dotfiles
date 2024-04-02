@@ -1,5 +1,6 @@
 import { PANEL_MARGIN_Y } from "main";
 import { Media } from "media";
+import PopupWindow from "widgets/PopupWindow";
 
 const audio = await Service.import("audio")
 
@@ -47,8 +48,7 @@ export const MicIcon = (size?: number) => Widget.Icon({
     size: size || 18
 })
 
-export function AudioBox(monitor = 0) {
-
+const AudioContainer = () => {
     function SpeakerSlider() {
         return Widget.Slider({
             css:
@@ -91,41 +91,42 @@ export function AudioBox(monitor = 0) {
         label: audio.microphone.bind('volume').as((v) => `${Math.floor(v * 100)}%`)
     })
 
-    return Widget.Window({
-        monitor,
+
+    return Widget.Box({
+        css: "min-width: 360px",
+        class_name: `${WINDOW_NAME}-popup`,
+        vertical: true,
+        children: [
+            Widget.Box({
+                class_name: "volume-container",
+                hexpand: true,
+                children: [
+                    SpeakerIcon(20),
+                    SpeakerSlider(),
+                    SpeakerLabel(),
+                ]
+            }),
+            Widget.Box({
+                class_name: "volume-container",
+                hexpand: true,
+                children: [
+                    MicIcon(20),
+                    MicSlider(),
+                    MicLabel(),
+                ]
+            }),
+            Media()
+        ]
+    })
+}
+
+export function AudioMenu(monitor = 0) {
+    return PopupWindow({
         name: WINDOW_NAME,
-        anchor: ['top', 'right'],
-        exclusivity: 'ignore',
-        keymode: "none",
-        layer: 'overlay',
-        margins: [PANEL_MARGIN_Y, 45],
-        child: Widget.Box({
-            css: "min-width: 360px",
-            class_name: `${WINDOW_NAME}-popup`,
-            vertical: true,
-            children: [
-                Widget.Box({
-                    class_name: "volume-container",
-                    hexpand: true,
-                    children: [
-                        SpeakerIcon(20),
-                        SpeakerSlider(),
-                        SpeakerLabel(),
-                    ]
-                }),
-                Widget.Box({
-                    class_name: "volume-container",
-                    hexpand: true,
-                    children: [
-                        MicIcon(20),
-                        MicSlider(),
-                        MicLabel(),
-                    ]
-                }),
-                Media()
-            ]
-        }),
-        visible: false
+        exclusivity: 'exclusive',
+        transition: 'none',
+        layout: 'top-right',
+        child: AudioContainer()
     })
 }
 
