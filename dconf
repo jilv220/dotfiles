@@ -7,8 +7,15 @@ window-is-maximized=false
 window-width=1920
 
 [com/github/johnfactotum/Foliate/window]
-default-height=995
+default-height=970
 default-width=1920
+maximized=false
+
+[com/github/tchx84/Flatseal]
+selected-app-id='com.tencent.WeChat'
+window-height=768
+window-maximized=false
+window-width=1024
 
 [io/github/celluloid-player/celluloid]
 always-append-to-playlist=true
@@ -37,6 +44,11 @@ recent-characters=['🥶']
 [org/gnome/Console]
 last-window-size=(756, 780)
 
+[org/gnome/Extensions]
+window-height=974
+window-maximized=false
+window-width=1920
+
 [org/gnome/Lollypop]
 notification-flag=2
 volume-rate=0.918701171875
@@ -45,7 +57,12 @@ window-position=[20, 20]
 window-size=[1912, 968]
 
 [org/gnome/TextEditor]
+last-save-directory='file:///home/sashimi/Documents'
 style-variant='dark'
+
+[org/gnome/Totem]
+active-plugins=['vimeo', 'variable-rate', 'skipto', 'screenshot', 'screensaver', 'save-file', 'rotation', 'recent', 'movie-properties', 'open-directory', 'mpris', 'autoload-subtitles', 'apple-trailers']
+subtitle-encoding='UTF-8'
 
 [org/gnome/calculator]
 accuracy=9
@@ -66,10 +83,10 @@ word-size=64
 [org/gnome/calendar]
 active-view='month'
 window-maximized=false
-window-size=(948, 979)
+window-size=(948, 954)
 
 [org/gnome/control-center]
-last-panel='wifi'
+last-panel='color'
 window-state=(1343, 737, false)
 
 [org/gnome/desktop/a11y/applications]
@@ -104,17 +121,19 @@ secondary-color='#000000000000'
 
 [org/gnome/desktop/input-sources]
 mru-sources=[('xkb', 'us')]
+show-all-sources=true
 sources=[('xkb', 'us')]
+xkb-options=['lv3:ralt_switch']
 
 [org/gnome/desktop/interface]
 color-scheme='prefer-dark'
 cursor-size=24
-cursor-theme='Pop'
+cursor-theme='Adwaita'
 enable-animations=true
 enable-hot-corners=false
 font-antialiasing='grayscale'
-font-hinting='slight'
-font-name='Noto Sans,  10'
+font-hinting='medium'
+font-name='Cantarell 11'
 font-rgba-order='rgb'
 gtk-theme='Pop-dark'
 icon-theme='Pop'
@@ -122,13 +141,19 @@ scaling-factor=uint32 1
 show-battery-percentage=true
 text-scaling-factor=1.25
 toolbar-icons-size='large'
-toolbar-style='text'
+toolbar-style='both-horiz'
 
 [org/gnome/desktop/notifications]
-application-children=['gnome-network-panel', 'org-gnome-epiphany', 'firefox', 'org-gnome-calendar', 'ca-desrt-dconf-editor', 'vlc', 'org-gnome-nautilus', 'wemeetapp', 'steam', 'us-zoom-zoom', 'torbrowser', 'org-gnome-extensions-desktop', 'org-gnome-texteditor', 'org-gnome-evince', 'org-gnome-settings', 'org-videolan-vlc', 'org-gnome-tweaks']
+application-children=['gnome-network-panel', 'org-gnome-epiphany', 'firefox', 'org-gnome-calendar', 'ca-desrt-dconf-editor', 'vlc', 'org-gnome-nautilus', 'wemeetapp', 'steam', 'us-zoom-zoom', 'torbrowser', 'org-gnome-extensions-desktop', 'org-gnome-texteditor', 'org-gnome-evince', 'org-gnome-settings', 'org-videolan-vlc', 'org-gnome-tweaks', 'com-tencent-wechat', 'code-oss', 'org-gnome-extensions']
 
 [org/gnome/desktop/notifications/application/ca-desrt-dconf-editor]
 application-id='ca.desrt.dconf-editor.desktop'
+
+[org/gnome/desktop/notifications/application/code-oss]
+application-id='code-oss.desktop'
+
+[org/gnome/desktop/notifications/application/com-tencent-wechat]
+application-id='com.tencent.WeChat.desktop'
 
 [org/gnome/desktop/notifications/application/firefox]
 application-id='firefox.desktop'
@@ -147,6 +172,9 @@ application-id='org.gnome.Evince.desktop'
 
 [org/gnome/desktop/notifications/application/org-gnome-extensions-desktop]
 application-id='org.gnome.Extensions.desktop.desktop'
+
+[org/gnome/desktop/notifications/application/org-gnome-extensions]
+application-id='org.gnome.Extensions.desktop'
 
 [org/gnome/desktop/notifications/application/org-gnome-nautilus]
 application-id='org.gnome.Nautilus.desktop'
@@ -205,6 +233,7 @@ idle-delay=uint32 300
 [org/gnome/desktop/sound]
 event-sounds=true
 input-feedback-sounds=false
+theme-name='ocean'
 
 [org/gnome/desktop/wm/keybindings]
 close=['<Super>q', '<Alt>F4']
@@ -242,24 +271,27 @@ num-workspaces=6
 theme='Dracula'
 workspace-names=@as []
 
+[org/gnome/eog/ui]
+sidebar=false
+
 [org/gnome/epiphany]
 ask-for-default=false
 
 [org/gnome/evince]
-document-directory=@ms 'file:///home/sashimi/proton_drive/FDU/6836_v3_Computer_Algorithms'
+document-directory=@ms 'file:///home/sashimi/proton_drive/FDU/6638_v3_Operating_System'
 
 [org/gnome/evince/default]
 continuous=true
 dual-page=false
-dual-page-odd-left=false
+dual-page-odd-left=true
 enable-spellchecking=true
 fullscreen=false
 inverted-colors=false
 show-sidebar=true
-sidebar-page='links'
-sidebar-size=280
+sidebar-page='thumbnails'
+sidebar-size=148
 sizing-mode='automatic'
-window-ratio=(1.8809523809523809, 1.46996996996997)
+window-ratio=(3.8092214903579076, 1.4564564564564564)
 zoom=1.0
 
 [org/gnome/evolution-data-server]
@@ -322,6 +354,9 @@ restore-shortcuts=@as []
 [org/gnome/nautilus/compression]
 default-compression-format='zip'
 
+[org/gnome/nautilus/icon-view]
+default-zoom-level='medium'
+
 [org/gnome/nautilus/list-view]
 use-tree-view=false
 
@@ -331,7 +366,7 @@ migrated-gtk-settings=true
 search-filter-time-type='last_modified'
 
 [org/gnome/nautilus/window-state]
-initial-size=(1920, 970)
+initial-size=(1920, 974)
 maximized=false
 
 [org/gnome/nm-applet/eap/64390862-c530-468c-b717-2f82ae8ee7ea]
@@ -339,7 +374,7 @@ ignore-ca-cert=false
 ignore-phase2-ca-cert=false
 
 [org/gnome/portal/filechooser/brave-browser]
-last-folder-path='/home/sashimi/proton_drive/FDU/6836_v3_Computer_Algorithms'
+last-folder-path='/home/sashimi/Downloads'
 
 [org/gnome/portal/filechooser/com.github.johnfactotum.Foliate]
 last-folder-path='/home/sashimi/proton_drive/FDU/7645_v1_Systems_Programing'
@@ -379,9 +414,10 @@ name='Launch Files'
 sleep-inactive-ac-type='nothing'
 
 [org/gnome/shell]
+disable-extension-version-validation=true
 disable-user-extensions=false
-disabled-extensions=['places-menu@gnome-shell-extensions.gcampax.github.com', 'native-window-placement@gnome-shell-extensions.gcampax.github.com', 'workspace-indicator@gnome-shell-extensions.gcampax.github.com', 'windowsNavigator@gnome-shell-extensions.gcampax.github.com', 'apps-menu@gnome-shell-extensions.gcampax.github.com', 'window-list@gnome-shell-extensions.gcampax.github.com']
-enabled-extensions=['user-theme@gnome-shell-extensions.gcampax.github.com', 'pop-shell@system76.com', 'kimpanel@kde.org', 'appindicatorsupport@rgcjonas.gmail.com', 'quick-settings-audio-panel@rayzeq.github.io', 'windowsNavigator@gnome-shell-extensions.gcampax.github.com', 'workspace-indicator@gnome-shell-extensions.gcampax.github.com', 'auto-move-windows@gnome-shell-extensions.gcampax.github.com', 'just-perfection-desktop@just-perfection', 'dash-to-dock@micxgx.gmail.com', 'space-bar@luchrioh']
+disabled-extensions=['places-menu@gnome-shell-extensions.gcampax.github.com', 'native-window-placement@gnome-shell-extensions.gcampax.github.com', 'workspace-indicator@gnome-shell-extensions.gcampax.github.com', 'windowsNavigator@gnome-shell-extensions.gcampax.github.com', 'window-list@gnome-shell-extensions.gcampax.github.com', 'apps-menu@gnome-shell-extensions.gcampax.github.com', 'user-theme@gnome-shell-extensions.gcampax.github.com']
+enabled-extensions=['pop-shell@system76.com', 'kimpanel@kde.org', 'windowsNavigator@gnome-shell-extensions.gcampax.github.com', 'workspace-indicator@gnome-shell-extensions.gcampax.github.com', 'auto-move-windows@gnome-shell-extensions.gcampax.github.com', 'just-perfection-desktop@just-perfection', 'space-bar@luchrioh', 'appindicatorsupport@rgcjonas.gmail.com', 'dash-to-dock@micxgx.gmail.com', 'quick-settings-audio-panel@rayzeq.github.io']
 favorite-apps=@as []
 last-selected-power-profile='performance'
 welcome-dialog-last-shown-version='45.2'
@@ -395,10 +431,11 @@ application-list=['org.videolan.VLC.desktop:6']
 [org/gnome/shell/extensions/dash-to-dock]
 always-center-icons=true
 apply-custom-theme=false
-background-color='rgb(33,31,31)'
+background-color='rgb(0,0,0)'
 background-opacity=0.90000000000000002
 custom-background-color=true
 custom-theme-shrink=true
+dance-urgent-applications=false
 dash-max-icon-size=48
 dock-fixed=true
 dock-position='BOTTOM'
@@ -409,6 +446,7 @@ isolate-monitors=false
 preferred-monitor=-2
 preferred-monitor-by-connector='eDP-1'
 preview-size-scale=0.0
+running-indicator-style='DOTS'
 show-apps-at-top=false
 show-running=true
 show-show-apps-button=false
@@ -440,13 +478,16 @@ workspace-wrap-around=true
 workspaces-in-app-grid=true
 
 [org/gnome/shell/extensions/libpanel]
+column-spacing-enabled=false
 layout=[['gnome@main', 'pop-shell@system76.com/main', 'quick-settings-audio-panel@rayzeq.github.io/main']]
+padding-enabled=false
+row-spacing-enabled=false
 
 [org/gnome/shell/extensions/pop-shell]
 activate-launcher=['<Super>a']
 active-hint=true
 fullscreen-launcher=true
-hint-color-rgba='rgb(251,194,108)'
+hint-color-rgba='rgb(53,132,228)'
 smart-gaps=true
 tile-by-default=true
 
@@ -513,7 +554,7 @@ show-extensions-notice=false
 
 [org/gtk/gtk4/settings/color-chooser]
 custom-colors=[(0.12941177189350128, 0.12156862765550613, 0.12156862765550613, 1.0), (1.0, 1.0, 1.0, 0.30000001192092896), (0.58039218187332153, 0.92156863212585449, 0.92156863212585449, 1.0)]
-selected-color=(true, 0.12941177189350128, 0.12156862765550613, 0.12156862765550613, 1.0)
+selected-color=(true, 0.0, 0.0, 0.0, 1.0)
 
 [org/gtk/gtk4/settings/file-chooser]
 date-format='regular'
@@ -530,13 +571,16 @@ view-type='list'
 window-size=(1075, 608)
 
 [org/gtk/settings/color-chooser]
-custom-colors=[(0.98431372549019602, 0.76078431372549016, 0.42352941176470582, 1.0), (0.98431372549019602, 0.76078431372549016, 0.42352941176470588, 1.0), (0.98431372549019602, 0.76000000000000001, 0.42352941176470582, 1.0), (0.42352941176470588, 0.98431372549019602, 0.94509803921568625, 1.0), (0.42352941176470582, 0.98431372549019602, 0.94588235294117651, 1.0), (0.98431372549019602, 0.72156862745098038, 0.42352941176470588, 1.0)]
-selected-color=(true, 0.98431372549019602, 0.76078431372549016, 0.42352941176470588, 1.0)
+custom-colors=[(0.20784313725490203, 0.51764705882352957, 0.89411764705882357, 1.0), (0.75686274509803919, 0.49019607843137253, 0.066666666666666666, 1.0), (0.98431372549019602, 0.76078431372549016, 0.42352941176470582, 1.0), (0.98431372549019602, 0.76078431372549016, 0.42352941176470588, 1.0), (0.98431372549019602, 0.76000000000000001, 0.42352941176470582, 1.0), (0.42352941176470588, 0.98431372549019602, 0.94509803921568625, 1.0), (0.42352941176470582, 0.98431372549019602, 0.94588235294117651, 1.0), (0.98431372549019602, 0.72156862745098038, 0.42352941176470588, 1.0)]
+selected-color=(true, 0.20784313725490203, 0.51764705882352957, 0.89411764705882357, 1.0)
+
+[org/gtk/settings/debug]
+enable-inspector-keybinding=true
 
 [org/gtk/settings/file-chooser]
 date-format='regular'
 location-mode='path-bar'
-show-hidden=false
+show-hidden=true
 show-size-column=true
 show-type-column=true
 sidebar-width=191
@@ -545,4 +589,4 @@ sort-directories-first=false
 sort-order='ascending'
 type-format='category'
 window-position=(26, 23)
-window-size=(954, 921)
+window-size=(960, 493)
