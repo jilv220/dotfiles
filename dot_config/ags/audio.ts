@@ -132,7 +132,7 @@ export function AudioMenu(monitor = 0) {
 
 export function Audio() {
     return Widget.Button({
-        class_name: `${WINDOW_NAME} -btn`,
+        class_name: `${WINDOW_NAME}-btn`,
         child: SpeakerIcon(),
         on_clicked: () => App.toggleWindow(WINDOW_NAME)
     })

@@ -23,27 +23,41 @@ function groupClients(clients: Client[]) {
 }
 
 function calculateNextIdx(idx: number, length: number) {
-  if (idx + 1 < length) {
-    return idx + 1
-  } else {
-    return 0
+  return (prevClientClass: string, currClientClass: string) => {
+    // console.log(prevClientClass + ' ' + currClientClass + ' ' + idx)
+
+    if (prevClientClass.length === 0) {
+      return idx
+    }
+
+    if (prevClientClass.length !== 0 && prevClientClass !== currClientClass) {
+      return idx
+    }
+
+    if (idx + 1 < length) {
+      return idx + 1
+    } else {
+      return 0
+    }
   }
 }
 
 const AppItem = (clientClass: string, addresses: string[]) => {
   const app = apps.list.find(app => app.match(clientClass))
-  let currentIdx = 0
+  let activeIdx = 0
 
   const btn = Widget.Button({
     class_name: "panel-button",
     on_primary_click: () => {
       // console.log(currentIdx)
+      const prevClientClass = hyprland.active.client.class
+
       if (!addresses.length) {
         app && launchApp(app)
       } else {
-        const nextIdx = calculateNextIdx(currentIdx, addresses.length)
-        focus(addresses[currentIdx])
-        currentIdx = nextIdx
+        const nextIdx = calculateNextIdx(activeIdx, addresses.length)
+        activeIdx = nextIdx(prevClientClass, clientClass)
+        focus(addresses[activeIdx])
       }
     },
     child: Widget.Icon({
@@ -51,6 +65,7 @@ const AppItem = (clientClass: string, addresses: string[]) => {
       icon: app?.icon_name || clientClass
     }),
   })
+
 
   const indicators = addresses.map(() => Widget.Box({
     class_name: "indicator",
@@ -62,12 +77,28 @@ const AppItem = (clientClass: string, addresses: string[]) => {
       clientClass,
       addresses
     },
-    // highlight the whole panel item
     setup: w =>
       w
         .hook(hyprland, () => {
+          // highlight the whole panel item
           w.toggleClassName("active", addresses.includes(hyprland.active.client.address))
         })
+        .hook(hyprland, (w, name, data) => {
+          switch (name) {
+            case 'activewindowv2':
+              // sync the focus from hyprland
+              if (typeof data !== 'string') return
+
+              let address = `0x${data}`
+              let idx = addresses.findIndex((a) => a === address)
+              if (idx !== -1)
+                activeIdx = idx
+
+              break
+            default:
+              break
+          }
+        }, 'event')
   },
     Widget.Box({
       vertical: true,
@@ -126,7 +157,7 @@ export const Applist = () => {
           if (appItemIdx !== -1) {
             let oldAddresses = childrenCopy[appItemIdx].attribute.addresses
             let newAddresses = oldAddresses.filter((oa) => oa !== address)
-            console.log(newAddresses)
+            // console.log(newAddresses)
 
             if (newAddresses.length) {
               let clientClass = hyprland.getClient(newAddresses[0])

@@ -35,7 +35,7 @@ export const PowerBox = (monitor = 0) => Widget.Window({
     layer: 'overlay',
     margins: [PANEL_MARGIN_Y, 0],
     child: Widget.Box({
-        class_name: "session-control",
+        class_name: "power-control",
         css: "min-width: 360px",
         children: [
             Widget.EventBox({

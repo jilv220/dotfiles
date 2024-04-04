@@ -7,6 +7,12 @@ import { sysTray } from "systray";
 import { Time, CalendarMenu } from "time";
 import { Applist } from "widgets/Applist";
 
+const scss = `${App.configDir}/style/main.scss`
+const css = `${App.configDir}/my-style.css`
+
+// package `dart-sass` for Arch linux
+Utils.exec(`sass ${scss} ${css}`)
+
 export const PANEL_MARGIN_Y = 44;
 
 const Bar = (monitor: number = 0) => Widget.Window({
@@ -67,5 +73,5 @@ export const agsConf = App.config({
         NotificationPopups(),
         PowerBox(),
     ],
-    style: './style.css'
+    style: css
 })
