@@ -1,6 +1,7 @@
 // Load gtk theme into scss
 @use '../style/loader/functions';
 @use '../style/loader/colors-public';
+@use 'applist';
 
 $panel_opacity: 0.9;
 
@@ -51,25 +52,6 @@ label {
 .workspaces button.focused {
     background: colors-public.$theme_selected_bg_color;
     color: colors-public.$theme_text_color;
-}
-
-.applist {
-    min-height: 64px;
-}
-
-.applist .panel-button {
-    background: none;
-}
-
-.applist .indicator {
-    background-color: colors-public.$theme_fg_color;
-    min-width: 6px;
-    min-height: 6px;
-    border-radius: 9999px;
-}
-
-.applist .active {
-    background-color: colors-public.$borders;
 }
 
 levelbar block,

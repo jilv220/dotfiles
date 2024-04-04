@@ -1,0 +1,25 @@
+@use '../style/loader/colors-public' as *;
+
+.applist {
+    min-height: 64px;
+
+    .panel-button {
+        background: none;
+    }
+
+    .indicator {
+        background-color: $theme_fg_color;
+        min-width: 6px;
+        min-height: 6px;
+        border-radius: 9999px;
+        margin-bottom: 4px;
+    }
+
+    .active {
+        background-color: $borders;
+    }
+
+    .fullscreen {
+        background-color: $theme_selected_bg_color;
+    }
+}

@@ -1,6 +1,26 @@
 /**
  * Multiplies the luminance of $c by $s
  */
+.applist {
+  min-height: 64px;
+}
+.applist .panel-button {
+  background: none;
+}
+.applist .indicator {
+  background-color: @theme_fg_color;
+  min-width: 6px;
+  min-height: 6px;
+  border-radius: 9999px;
+  margin-bottom: 4px;
+}
+.applist .active {
+  background-color: @borders;
+}
+.applist .fullscreen {
+  background-color: @theme_selected_bg_color;
+}
+
 .bar {
   background-color: @theme_bg_color;
   color: @theme_fg_color;
@@ -48,25 +68,6 @@ label {
 .workspaces button.focused {
   background: @theme_selected_bg_color;
   color: @theme_text_color;
-}
-
-.applist {
-  min-height: 64px;
-}
-
-.applist .panel-button {
-  background: none;
-}
-
-.applist .indicator {
-  background-color: @theme_fg_color;
-  min-width: 6px;
-  min-height: 6px;
-  border-radius: 9999px;
-}
-
-.applist .active {
-  background-color: @borders;
 }
 
 levelbar block,
