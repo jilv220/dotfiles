@@ -2,11 +2,18 @@
 @use '../style/loader/functions';
 @use '../style/loader/colors-public';
 
-window {
-    .bar {
-        background-color: colors-public.$theme_bg_color;
-        color: colors-public.$theme_fg_color;
-    }
+$panel_opacity: 0.9;
+
+.bar {
+    background-color: colors-public.$theme_bg_color;
+    color: colors-public.$theme_fg_color;
+    opacity: $panel_opacity;
+}
+
+.panel {
+    background-color: colors-public.$theme_bg_color;
+    color: colors-public.$theme_fg_color;
+    opacity: $panel_opacity;
 }
 
 .popup-window .window-content {

@@ -1,9 +1,16 @@
 /**
  * Multiplies the luminance of $c by $s
  */
-window .bar {
+.bar {
   background-color: @theme_bg_color;
   color: @theme_fg_color;
+  opacity: 0.9;
+}
+
+.panel {
+  background-color: @theme_bg_color;
+  color: @theme_fg_color;
+  opacity: 0.9;
 }
 
 .popup-window .window-content {

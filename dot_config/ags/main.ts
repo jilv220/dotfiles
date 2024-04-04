@@ -18,6 +18,7 @@ export const PANEL_MARGIN_Y = 44;
 const Bar = (monitor: number = 0) => Widget.Window({
     monitor,
     name: `bar${monitor}`,
+    class_name: 'bar',
     anchor: ['top', 'left', 'right'],
     exclusivity: 'exclusive',
     child: Widget.CenterBox({
@@ -48,6 +49,7 @@ const Bar = (monitor: number = 0) => Widget.Window({
 const Panel = (monitor: number = 0) => Widget.Window({
     monitor,
     name: `panel${monitor}`,
+    class_name: 'panel',
     anchor: ['bottom', 'left', 'right'],
     exclusivity: 'exclusive',
     child: Widget.CenterBox({

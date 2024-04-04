@@ -48,7 +48,10 @@ export const PowerBox = (monitor = 0) => Widget.Window({
                     ]),
                     end_widget: LockScreenShortcutBox
                 }),
-                on_primary_click: () => Utils.execAsync('swaylock')
+                on_primary_click: () => {
+                    Utils.execAsync('hyprlock')
+                    App.toggleWindow(WINDOW_NAME)
+                }
             })
         ]
     }),
