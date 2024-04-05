@@ -2,9 +2,17 @@
 
 .applist {
     min-height: 64px;
+    margin: 3px 0;
+    padding: 0px 3px;
+
+    .panel-item {
+        margin-left: 3px;
+    }
 
     .panel-button {
-        background: none;
+        padding: 6px 6px;
+        border-radius: 16px;
+        margin-bottom: 3px;
     }
 
     .indicator {
@@ -12,14 +20,17 @@
         min-width: 6px;
         min-height: 6px;
         border-radius: 9999px;
-        margin-bottom: 4px;
     }
 
     .active {
-        background-color: $borders;
+        .panel-button {
+            background: $borders;
+        }
     }
 
     .fullscreen {
-        background-color: $theme_selected_bg_color;
+        .panel-button {
+            background: $theme_selected_bg_color;
+        }
     }
 }

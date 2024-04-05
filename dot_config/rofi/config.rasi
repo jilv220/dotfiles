@@ -27,15 +27,22 @@ configuration {
     adw-des: #c01c28;
     adw-plcd: #c0bfbc;
 
-    font: "Cantarell bold 16";
+    pop-bgd: #303030;
+    pop-fgd: #cccccc;
+    pop-sel: #94ebeb;
+    pop-des: #ea9090;
+    pop-plcd: #a5a5a5;
 
-    foreground: @adw-fgd;
-    background: @adw-bgd;
-    active-background: @adw-sel;
-    urgent-background: @adw-des;
-    urgent-foreground: @adw-fgd;
-    bordercolor: @adw-bgd;
-    placeholder: @adw-plcd;
+    font: "Fira Sans bold 14";
+
+    foreground: @pop-fgd;
+    foreground-reverse: @pop-bgd;
+    background: @pop-bgd;
+    active-background: @pop-sel;
+    urgent-background: @pop-des;
+    urgent-foreground: @pop-fgd;
+    bordercolor: @pop-bgd;
+    placeholder: @pop-plcd;
     
     selected-background: @active-background;
     selected-urgent-background: @urgent-background;
@@ -46,7 +53,7 @@ configuration {
 #window {
     background-color: @background;
     border:           2;
-    border-radius:    10;
+    border-radius:    16px;
     border-color: @bordercolor;
     /* padding:          5; */
 }
@@ -73,8 +80,8 @@ configuration {
 }
 #element {
     border:  0;
-    border-radius: 4px;
-    padding: 8px 4px;
+    border-radius: 12px;
+    padding: 8px 12px;
 }
 #element.normal.normal {
     background-color: @background;
@@ -90,11 +97,11 @@ configuration {
 }
 #element.selected.normal {
     background-color: @selected-background;
-    text-color:       @foreground;
+    text-color:       @foreground-reverse;
 }
 #element.selected.urgent {
     background-color: @selected-urgent-background;
-    text-color:       @foreground;
+    text-color:       @foreground-reverse;
 }
 #element.selected.active {
     background-color: @selected-active-background;
@@ -152,7 +159,7 @@ configuration {
 #textbox-prompt-colon {
     expand:     false;
     str:        ":";
-    margin:     0px 0.3em 0em 0em ;
+    margin:     0px 0.4em 0.3em 0em ;
     text-color: @selected-background;
 }
 element-text, element-icon {

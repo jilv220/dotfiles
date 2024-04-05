@@ -2,8 +2,11 @@
 @use 'sass:color';
 
 $theme_fg_color: gtkcolor(theme_fg_color);
+
 $theme_bg_color: gtkcolor(theme_bg_color);
+
 $theme_selected_bg_color: gtkcolor(theme_selected_bg_color);
+
 $theme_text_color: gtkcolor(theme_text_color);
 $wm_borders_edge: gtkcolor(wm_borders_edge);
 $theme_unfocused_fg_color: gtkcolor(theme_unfocused_fg_color);

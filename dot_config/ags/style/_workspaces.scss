@@ -1,0 +1,17 @@
+@use '../style/loader/colors-public' as *;
+
+.workspaces {
+    button {
+        min-width: 22px;
+        border-radius: 18px;
+        margin-top: 2px;
+        margin-left: 8px;
+        margin-bottom: 2px;
+        transition: none;
+    }
+
+    .focused {
+        background: $theme_selected_bg_color;
+        color: $theme_bg_color;
+    }
+}

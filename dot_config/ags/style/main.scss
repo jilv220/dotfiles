@@ -1,9 +1,12 @@
 // Load gtk theme into scss
 @use '../style/loader/functions';
 @use '../style/loader/colors-public';
+
+@use 'global';
+@use 'workspaces';
 @use 'applist';
 
-$panel_opacity: 0.9;
+$panel_opacity: 0.92;
 
 .bar {
     background-color: colors-public.$theme_bg_color;
@@ -18,40 +21,9 @@ $panel_opacity: 0.9;
 }
 
 .popup-window .window-content {
-    background-color: colors-public.$popup_bg_color;
+    background-color: colors-public.$theme_bg_color;
     color: colors-public.$theme_fg_color;
     border-radius: 12px;
-}
-
-/* 
-Have to reset the ugly gtk button background and border
-https://github.com/Alexays/Waybar/issues/60#issuecomment-1604253114 
-*/
-button {
-    min-width: 0;
-    padding-top: 6px;
-    padding-bottom: 6px;
-    border-color: transparent;
-    box-shadow: none;
-    background-color: transparent;
-}
-
-label {
-    font-weight: bold;
-}
-
-.workspaces button {
-    min-width: 22px;
-    border-radius: 18px;
-    margin-top: 2px;
-    margin-left: 8px;
-    margin-bottom: 2px;
-    transition: none;
-}
-
-.workspaces button.focused {
-    background: colors-public.$theme_selected_bg_color;
-    color: colors-public.$theme_text_color;
 }
 
 levelbar block,
@@ -62,7 +34,6 @@ highlight {
 window.notification-popups box.notifications {
     padding: .5em;
 }
-
 
 .icon {
     min-width: 68px;
@@ -163,9 +134,9 @@ window.notification-popups box.notifications {
     margin-right: 4px;
 }
 
-.player button:hover {
-    background-color: colors-public.$unfocused_borders;
-}
+// .player button:hover {
+//     background-color: colors-public.$unfocused_borders;
+// }
 
 /* Power */
 .power-control {

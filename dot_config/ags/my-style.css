@@ -1,44 +1,6 @@
 /**
  * Multiplies the luminance of $c by $s
  */
-.applist {
-  min-height: 64px;
-}
-.applist .panel-button {
-  background: none;
-}
-.applist .indicator {
-  background-color: @theme_fg_color;
-  min-width: 6px;
-  min-height: 6px;
-  border-radius: 9999px;
-  margin-bottom: 4px;
-}
-.applist .active {
-  background-color: @borders;
-}
-.applist .fullscreen {
-  background-color: @theme_selected_bg_color;
-}
-
-.bar {
-  background-color: @theme_bg_color;
-  color: @theme_fg_color;
-  opacity: 0.9;
-}
-
-.panel {
-  background-color: @theme_bg_color;
-  color: @theme_fg_color;
-  opacity: 0.9;
-}
-
-.popup-window .window-content {
-  background-color: shade(@theme_bg_color,1.57);
-  color: @theme_fg_color;
-  border-radius: 12px;
-}
-
 /* 
 Have to reset the ugly gtk button background and border
 https://github.com/Alexays/Waybar/issues/60#issuecomment-1604253114 
@@ -64,10 +26,53 @@ label {
   margin-bottom: 2px;
   transition: none;
 }
-
-.workspaces button.focused {
+.workspaces .focused {
   background: @theme_selected_bg_color;
-  color: @theme_text_color;
+  color: @theme_bg_color;
+}
+
+.applist {
+  min-height: 64px;
+  margin: 3px 0;
+  padding: 0px 3px;
+}
+.applist .panel-item {
+  margin-left: 3px;
+}
+.applist .panel-button {
+  padding: 6px 6px;
+  border-radius: 16px;
+  margin-bottom: 3px;
+}
+.applist .indicator {
+  background-color: @theme_fg_color;
+  min-width: 6px;
+  min-height: 6px;
+  border-radius: 9999px;
+}
+.applist .active .panel-button {
+  background: @borders;
+}
+.applist .fullscreen .panel-button {
+  background: @theme_selected_bg_color;
+}
+
+.bar {
+  background-color: @theme_bg_color;
+  color: @theme_fg_color;
+  opacity: 0.92;
+}
+
+.panel {
+  background-color: @theme_bg_color;
+  color: @theme_fg_color;
+  opacity: 0.92;
+}
+
+.popup-window .window-content {
+  background-color: @theme_bg_color;
+  color: @theme_fg_color;
+  border-radius: 12px;
 }
 
 levelbar block,
@@ -176,10 +181,6 @@ window.notification-popups box.notifications {
   background-repeat: no-repeat;
   background-position: center;
   margin-right: 4px;
-}
-
-.player button:hover {
-  background-color: @unfocused_borders;
 }
 
 /* Power */

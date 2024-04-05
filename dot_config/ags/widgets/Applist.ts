@@ -112,7 +112,7 @@ const AppItem = (clientClass: string, addresses: string[]) => {
 						 * Can't do async here for some reason? Race condition?
 						 */
 						const client = getActiveWindow();
-						const isActiveItem = w.attribute.clientClass === client?.class;
+						const isActiveItem = clientClass === client?.class;
 
 						w.toggleClassName("active", isActiveItem);
 						w.toggleClassName("fullscreen", isActiveItem && client?.fullscreen);

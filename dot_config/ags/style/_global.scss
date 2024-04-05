@@ -1,0 +1,16 @@
+/* 
+Have to reset the ugly gtk button background and border
+https://github.com/Alexays/Waybar/issues/60#issuecomment-1604253114 
+*/
+button {
+    min-width: 0;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    border-color: transparent;
+    box-shadow: none;
+    background-color: transparent;
+}
+
+label {
+    font-weight: bold;
+}
