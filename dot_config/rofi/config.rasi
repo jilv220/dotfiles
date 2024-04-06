@@ -33,7 +33,7 @@ configuration {
     pop-des: #ea9090;
     pop-plcd: #a5a5a5;
 
-    font: "Fira Sans bold 14";
+    font: "Fira Sans bold 16";
 
     foreground: @pop-fgd;
     foreground-reverse: @pop-bgd;
@@ -53,7 +53,7 @@ configuration {
 #window {
     background-color: @background;
     border:           2;
-    border-radius:    16px;
+    border-radius:    12px;
     border-color: @bordercolor;
     /* padding:          5; */
 }
@@ -80,7 +80,7 @@ configuration {
 }
 #element {
     border:  0;
-    border-radius: 12px;
+    border-radius: 6px;
     padding: 8px 12px;
 }
 #element.normal.normal {

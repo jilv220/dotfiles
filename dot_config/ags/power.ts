@@ -1,69 +1,48 @@
-import { PANEL_MARGIN_Y } from "main";
+import { Lock } from "modules/power/lock";
+import { Logout } from "modules/power/logout";
+import { Restart } from "modules/power/restart";
+import { Shutdown } from "modules/power/shutdown";
+import { Suspend } from "modules/power/suspend";
+import PopupWindow from "widgets/PopupWindow";
 
-const WINDOW_NAME = 'power';
+const WINDOW_NAME = "power";
 
-const LockIcon = Widget.Box({
-    hpack: 'start',
-    child: Widget.Icon({
-        icon: 'system-lock-screen-symbolic',
-        size: 24
-    })
-})
+const PowerContainer = () => {
+  return Widget.Box({
+    class_name: "power-control",
+    css: "min-width: 400px",
+    vertical: true,
+    children: [
+      Widget.Box({
+        vertical: true,
+        children: [Lock(), Logout()],
+      }),
+      Widget.CenterBox({
+        start_widget: Suspend(),
+        center_widget: Restart(),
+        end_widget: Shutdown(),
+      }),
+    ],
+  });
+};
 
-const LockSreenLabel = Widget.Box({
-    hpack: "start",
-    child: Widget.Label({
-        label: 'Lock Screen',
-        justification: 'left',
-    })
-})
-
-const LockScreenShortcutBox = Widget.Box({
-    hpack: "end",
-    child: Widget.Label({
-        label: 'Super + Escape',
-        justification: 'right',
-    })
-})
-
-export const PowerBox = (monitor = 0) => Widget.Window({
+export function PowerMenu(monitor = 0) {
+  return PopupWindow({
     monitor,
     name: WINDOW_NAME,
-    anchor: ['top', 'right'],
-    exclusivity: 'ignore',
-    keymode: "none",
-    layer: 'overlay',
-    margins: [PANEL_MARGIN_Y, 0],
-    child: Widget.Box({
-        class_name: "power-control",
-        css: "min-width: 360px",
-        children: [
-            Widget.EventBox({
-                class_name: "lock",
-                hexpand: true,
-                child: Widget.CenterBox({
-                    start_widget: Widget.Box([
-                        LockIcon,
-                        LockSreenLabel
-                    ]),
-                    end_widget: LockScreenShortcutBox
-                }),
-                on_primary_click: () => {
-                    Utils.execAsync('hyprlock')
-                    App.toggleWindow(WINDOW_NAME)
-                }
-            })
-        ]
-    }),
-    visible: false
-})
+    exclusivity: "exclusive",
+    transition: "none",
+    layout: "top-right",
+    child: PowerContainer(),
+  });
+}
 
 export function Power() {
-    const icon = 'system-shutdown-symbolic'
+  const icon = "system-shutdown-symbolic";
 
-    return Widget.Button({
-        class_name: WINDOW_NAME,
-        child: Widget.Icon(icon),
-        on_clicked: () => App.toggleWindow(WINDOW_NAME)
-    })
+  return Widget.Button({
+    class_name: WINDOW_NAME,
+    child: Widget.Icon(icon),
+    on_clicked: () => App.toggleWindow(WINDOW_NAME),
+  });
 }

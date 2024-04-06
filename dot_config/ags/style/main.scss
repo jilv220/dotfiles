@@ -3,27 +3,42 @@
 @use '../style/loader/colors-public';
 
 @use 'global';
+@use 'mixin' as *;
 @use 'workspaces';
 @use 'applist';
+@use 'power';
 
 $panel_opacity: 0.92;
 
 .bar {
-    background-color: colors-public.$theme_bg_color;
-    color: colors-public.$theme_fg_color;
-    opacity: $panel_opacity;
+    @include toplevel-base;
+
+    button {
+        border-radius: 9999px;
+    }
+
+    .bar-start {
+        margin-top: 4px;
+        margin-bottom: 4px;
+    }
+
+    .bar-center {
+        margin-top: 4px;
+        margin-bottom: 4px;
+    }
+
+    .bar-end {
+        margin-top: 4px;
+        margin-bottom: 4px;
+
+        button {
+            margin-right: 6px;
+        }
+    }
 }
 
 .panel {
-    background-color: colors-public.$theme_bg_color;
-    color: colors-public.$theme_fg_color;
-    opacity: $panel_opacity;
-}
-
-.popup-window .window-content {
-    background-color: colors-public.$theme_bg_color;
-    color: colors-public.$theme_fg_color;
-    border-radius: 12px;
+    @include toplevel-base;
 }
 
 levelbar block,
@@ -137,14 +152,3 @@ window.notification-popups box.notifications {
 // .player button:hover {
 //     background-color: colors-public.$unfocused_borders;
 // }
-
-/* Power */
-.power-control {
-    font-weight: normal;
-    font-size: 14px;
-}
-
-.power-control .lock {
-    padding-left: 0.4em;
-    padding-right: 0.4em;
-}

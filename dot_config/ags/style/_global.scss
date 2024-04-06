@@ -1,9 +1,10 @@
+@use '../style/loader/colors-public' as *;
+
 /* 
 Have to reset the ugly gtk button background and border
 https://github.com/Alexays/Waybar/issues/60#issuecomment-1604253114 
 */
 button {
-    min-width: 0;
     padding-top: 6px;
     padding-bottom: 6px;
     border-color: transparent;
@@ -13,4 +14,10 @@ button {
 
 label {
     font-weight: bold;
+}
+
+.popup-window .window-content {
+    background-color: $theme_bg_color;
+    color: $theme_fg_color;
+    border-radius: 12px;
 }

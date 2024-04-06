@@ -1,18 +1,34 @@
 @use '../style/loader/colors-public' as *;
 
 .applist {
-    min-height: 64px;
-    margin: 3px 0;
-    padding: 0px 3px;
+    margin: 4px 0;
 
     .panel-item {
-        margin-left: 3px;
+        padding-bottom: 3px;
+        border-radius: 12px;
+
+        &:hover {
+            background: $panel_focused_bg_color;
+        }
+    }
+
+    .panel-item-box {
+        padding-bottom: 3px;
+        border-radius: 12px;
+
+        &:hover {
+            margin-left: 0px;
+            background: $panel_focused_bg_color;
+        }
     }
 
     .panel-button {
-        padding: 6px 6px;
-        border-radius: 16px;
-        margin-bottom: 3px;
+        background: none;
+        padding: 6px 6px 0px;
+
+        &:hover {
+            background: none;
+        }
     }
 
     .indicator {
@@ -23,14 +39,14 @@
     }
 
     .active {
-        .panel-button {
-            background: $borders;
-        }
+        background: $panel_focused_bg_color;
     }
 
     .fullscreen {
-        .panel-button {
-            background: $theme_selected_bg_color;
+        background: $theme_selected_bg_color;
+
+        .indicator {
+            background-color: $theme_bg_color;
         }
     }
 }

@@ -4,14 +4,18 @@
     button {
         min-width: 22px;
         border-radius: 18px;
-        margin-top: 2px;
-        margin-left: 8px;
-        margin-bottom: 2px;
+        margin-left: 6px;
         transition: none;
+        background: none;
     }
 
     .focused {
         background: $theme_selected_bg_color;
         color: $theme_bg_color;
+
+        &:hover {
+            background-color: $theme_selected_bg_color;
+            color: $theme_bg_color;
+        }
     }
 }

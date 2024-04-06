@@ -1,6 +1,7 @@
 import type Gtk from "types/@girs/gtk-3.0/gtk-3.0";
 import type { Client } from "types/service/hyprland";
 import type Box from "types/widgets/box";
+import type EventBox from "types/widgets/eventbox";
 import { launchApp } from "utils";
 
 const hyprland = await Service.import("hyprland");
@@ -78,9 +79,9 @@ const AppItem = (clientClass: string, addresses: string[]) => {
 		}),
 	);
 
-	return Widget.Box(
+	const itemBox = Widget.Box(
 		{
-			class_name: "panel-item",
+			class_name: "panel-item-box",
 			attribute: {
 				clientClass,
 				addresses,
@@ -130,14 +131,24 @@ const AppItem = (clientClass: string, addresses: string[]) => {
 			],
 		}),
 	);
+
+	return Widget.EventBox(
+		{
+			class_name: "panel-item",
+			margin_left: 6,
+			attribute: {
+				clientClass,
+				addresses,
+			},
+		},
+		itemBox,
+	);
 };
 
 export const Applist = () => {
 	const clientEntries = groupClients(hyprland.clients).entries();
-	const AppItems: Box<
-		Gtk.Widget,
-		{ clientClass: string; addresses: string[] }
-	>[] = [];
+	// biome-ignore lint/suspicious/noExplicitAny: <explanation>
+	const AppItems: any[] = [];
 
 	for (const [clientClass, clientAddresses] of clientEntries) {
 		AppItems.push(AppItem(clientClass, clientAddresses));

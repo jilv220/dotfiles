@@ -6,7 +6,6 @@ Have to reset the ugly gtk button background and border
 https://github.com/Alexays/Waybar/issues/60#issuecomment-1604253114 
 */
 button {
-  min-width: 0;
   padding-top: 6px;
   padding-bottom: 6px;
   border-color: transparent;
@@ -18,31 +17,52 @@ label {
   font-weight: bold;
 }
 
+.popup-window .window-content {
+  background-color: @theme_bg_color;
+  color: @theme_fg_color;
+  border-radius: 12px;
+}
+
 .workspaces button {
   min-width: 22px;
   border-radius: 18px;
-  margin-top: 2px;
-  margin-left: 8px;
-  margin-bottom: 2px;
+  margin-left: 6px;
   transition: none;
+  background: none;
 }
 .workspaces .focused {
   background: @theme_selected_bg_color;
   color: @theme_bg_color;
 }
+.workspaces .focused:hover {
+  background-color: @theme_selected_bg_color;
+  color: @theme_bg_color;
+}
 
 .applist {
-  min-height: 64px;
-  margin: 3px 0;
-  padding: 0px 3px;
+  margin: 4px 0;
 }
 .applist .panel-item {
-  margin-left: 3px;
+  padding-bottom: 3px;
+  border-radius: 12px;
+}
+.applist .panel-item:hover {
+  background: shade(@theme_bg_color,1.57);
+}
+.applist .panel-item-box {
+  padding-bottom: 3px;
+  border-radius: 12px;
+}
+.applist .panel-item-box:hover {
+  margin-left: 0px;
+  background: shade(@theme_bg_color,1.57);
 }
 .applist .panel-button {
-  padding: 6px 6px;
-  border-radius: 16px;
-  margin-bottom: 3px;
+  background: none;
+  padding: 6px 6px 0px;
+}
+.applist .panel-button:hover {
+  background: none;
 }
 .applist .indicator {
   background-color: @theme_fg_color;
@@ -50,11 +70,43 @@ label {
   min-height: 6px;
   border-radius: 9999px;
 }
-.applist .active .panel-button {
-  background: @borders;
+.applist .active {
+  background: shade(@theme_bg_color,1.57);
 }
-.applist .fullscreen .panel-button {
+.applist .fullscreen {
   background: @theme_selected_bg_color;
+}
+.applist .fullscreen .indicator {
+  background-color: @theme_bg_color;
+}
+
+.power-control {
+  font-size: 14px;
+  padding: 16px 16px;
+}
+.power-control > :nth-child(1) {
+  margin-bottom: 6px;
+}
+.power-control .power-control-top-eb:hover {
+  background-color: shade(@theme_bg_color,1.57);
+  border-radius: 6px;
+}
+.power-control .power-control-top-eb .power-control-top {
+  padding: 6px 6px;
+}
+.power-control .power-control-top-eb .power-control-top-icon {
+  margin-right: 4px;
+}
+.power-control .power-control-bottom-eb:hover {
+  background-color: shade(@theme_bg_color,1.57);
+  border-radius: 9999px;
+}
+.power-control .power-control-bottom-eb .power-control-bottom {
+  margin: 8px 0;
+  padding: 0px 36px;
+}
+.power-control .power-control-bottom-eb .power-control-bottom > :nth-child(1) {
+  padding-bottom: 4px;
 }
 
 .bar {
@@ -62,17 +114,41 @@ label {
   color: @theme_fg_color;
   opacity: 0.92;
 }
+.bar button {
+  background: transparent;
+}
+.bar button:hover {
+  background-color: shade(@theme_bg_color,1.57);
+}
+.bar button {
+  border-radius: 9999px;
+}
+.bar .bar-start {
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+.bar .bar-center {
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+.bar .bar-end {
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+.bar .bar-end button {
+  margin-right: 6px;
+}
 
 .panel {
   background-color: @theme_bg_color;
   color: @theme_fg_color;
   opacity: 0.92;
 }
-
-.popup-window .window-content {
-  background-color: @theme_bg_color;
-  color: @theme_fg_color;
-  border-radius: 12px;
+.panel button {
+  background: transparent;
+}
+.panel button:hover {
+  background-color: shade(@theme_bg_color,1.57);
 }
 
 levelbar block,
@@ -181,17 +257,6 @@ window.notification-popups box.notifications {
   background-repeat: no-repeat;
   background-position: center;
   margin-right: 4px;
-}
-
-/* Power */
-.power-control {
-  font-weight: normal;
-  font-size: 14px;
-}
-
-.power-control .lock {
-  padding-left: 0.4em;
-  padding-right: 0.4em;
 }
 
 /*# sourceMappingURL=my-style.css.map */
