@@ -1,6 +1,6 @@
 import { Audio, AudioMenu } from "audio";
 import { Battery, BatteryBox } from "battery";
-import { Workspaces } from "hyprland";
+import { Title, Workspaces } from "hyprland";
 import { NotificationPopups } from "notifications";
 import { Power, PowerMenu } from "power";
 import { sysTray } from "systray";
@@ -25,7 +25,7 @@ const Bar = (monitor = 0) =>
     child: Widget.CenterBox({
       start_widget: Widget.Box({
         class_name: "bar-start",
-        children: [Workspaces()],
+        children: [Workspaces(), Title()],
       }),
       center_widget: Widget.Box({
         class_name: "bar-center",
@@ -39,26 +39,25 @@ const Bar = (monitor = 0) =>
     }),
   });
 
-const Panel = (monitor = 0) =>
-  Widget.Window({
-    monitor,
-    name: `panel${monitor}`,
-    class_name: "panel",
-    anchor: ["bottom", "left", "right"],
-    exclusivity: "exclusive",
-    child: Widget.CenterBox({
-      center_widget: Widget.Box({
-        spacing: 8,
-        children: [Applist()],
-      }),
-    }),
-  });
+// const Panel = (monitor = 0) =>
+//   Widget.Window({
+//     monitor,
+//     name: `panel${monitor}`,
+//     class_name: "panel",
+//     anchor: ["bottom", "left", "right"],
+//     exclusivity: "exclusive",
+//     child: Widget.CenterBox({
+//       center_widget: Widget.Box({
+//         spacing: 8,
+//         children: [Applist()],
+//       }),
+//     }),
+//   });
 
 export const agsConf = App.config({
   onConfigParsed: () => {},
   windows: [
     Bar(),
-    Panel(),
     CalendarMenu(),
     AudioMenu(),
     BatteryBox(),

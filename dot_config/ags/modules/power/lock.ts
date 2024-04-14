@@ -37,7 +37,7 @@ export const Lock = () => {
       end_widget: LockScreenShortcutBox,
     }),
     on_primary_click: () => {
-      Utils.execAsync("hyprlock");
+      Utils.execAsync("loginctl lock-session");
       App.toggleWindow(WINDOW_NAME);
     },
   });

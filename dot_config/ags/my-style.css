@@ -23,6 +23,11 @@ label {
   border-radius: 12px;
 }
 
+.divider {
+  min-height: 2px;
+  background-color: shade(@theme_bg_color,1.57);
+}
+
 .workspaces button {
   min-width: 22px;
   border-radius: 18px;
@@ -39,6 +44,16 @@ label {
   color: @theme_bg_color;
 }
 
+.focused-title {
+  padding: 0 12px;
+  margin-left: 12px;
+  border-radius: 9999px;
+}
+.focused-title.fullscreen {
+  background-color: @theme_selected_bg_color;
+  color: @theme_bg_color;
+}
+
 .applist {
   margin: 4px 0;
 }
@@ -47,7 +62,7 @@ label {
   border-radius: 12px;
 }
 .applist .panel-item:hover {
-  background: shade(@theme_bg_color,1.57);
+  background: shade(@theme_bg_color,1.207);
 }
 .applist .panel-item-box {
   padding-bottom: 3px;
@@ -55,7 +70,7 @@ label {
 }
 .applist .panel-item-box:hover {
   margin-left: 0px;
-  background: shade(@theme_bg_color,1.57);
+  background: shade(@theme_bg_color,1.207);
 }
 .applist .panel-button {
   background: none;
@@ -71,7 +86,7 @@ label {
   border-radius: 9999px;
 }
 .applist .active {
-  background: shade(@theme_bg_color,1.57);
+  background: shade(@theme_bg_color,1.32);
 }
 .applist .fullscreen {
   background: @theme_selected_bg_color;
@@ -88,7 +103,7 @@ label {
   margin-bottom: 6px;
 }
 .power-control .power-control-top-eb:hover {
-  background-color: shade(@theme_bg_color,1.57);
+  background-color: shade(@theme_bg_color,1.207);
   border-radius: 6px;
 }
 .power-control .power-control-top-eb .power-control-top {
@@ -98,7 +113,7 @@ label {
   margin-right: 4px;
 }
 .power-control .power-control-bottom-eb:hover {
-  background-color: shade(@theme_bg_color,1.57);
+  background-color: shade(@theme_bg_color,1.207);
   border-radius: 9999px;
 }
 .power-control .power-control-bottom-eb .power-control-bottom {
@@ -118,7 +133,7 @@ label {
   background: transparent;
 }
 .bar button:hover {
-  background-color: shade(@theme_bg_color,1.57);
+  background-color: shade(@theme_bg_color,1.207);
 }
 .bar button {
   border-radius: 9999px;
@@ -134,9 +149,10 @@ label {
 .bar .bar-end {
   margin-top: 4px;
   margin-bottom: 4px;
-}
-.bar .bar-end button {
   margin-right: 6px;
+}
+.bar .bar-end .systray-item {
+  margin-right: 2px;
 }
 
 .panel {
@@ -148,7 +164,11 @@ label {
   background: transparent;
 }
 .panel button:hover {
-  background-color: shade(@theme_bg_color,1.57);
+  background-color: shade(@theme_bg_color,1.207);
+}
+
+.time {
+  padding: 0 0.4em;
 }
 
 levelbar block,
@@ -219,6 +239,9 @@ window.notification-popups box.notifications {
   padding: 8px 16px;
   font-weight: normal;
 }
+.audio-popup .divider {
+  margin: 0.8em 0;
+}
 
 .audio-popup .volume-container {
   font-size: 16px;
@@ -230,7 +253,7 @@ window.notification-popups box.notifications {
 
 /* Media = parent of players & sinks(todo) */
 .media {
-  padding: 6px 0px;
+  padding: 0.4em 0;
 }
 
 .player {
@@ -256,7 +279,7 @@ window.notification-popups box.notifications {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  margin-right: 4px;
+  margin-right: 6px;
 }
 
 /*# sourceMappingURL=my-style.css.map */

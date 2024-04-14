@@ -1,6 +1,9 @@
 import { PANEL_MARGIN_Y } from "main";
 import { Media } from "media";
+import { VolumeMixer } from "modules/audio/volume-mixer";
+import Divider from "widgets/Divider";
 import PopupWindow from "widgets/PopupWindow";
+import Slider from "widgets/Slider";
 
 const audio = await Service.import("audio");
 
@@ -60,13 +63,7 @@ export const MicIcon = (size?: number) =>
 
 const AudioContainer = () => {
   function SpeakerSlider() {
-    return Widget.Slider({
-      css: `
-                min-width: 4px;
-                min-height: 4px;
-            `,
-      hexpand: true,
-      draw_value: false,
+    return Slider({
       on_change: ({ value }) => {
         audio.speaker.volume = value;
       },
@@ -123,6 +120,8 @@ const AudioContainer = () => {
         children: [MicIcon(20), MicSlider(), MicLabel()],
       }),
       Media(),
+      Divider(),
+      VolumeMixer(),
     ],
   });
 };

@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+sleep 5
+flatpak run org.videolan.VLC &
+
+# wait for webhelper ?
+steam -silent &

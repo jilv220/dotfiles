@@ -21,3 +21,8 @@ label {
     color: $theme_fg_color;
     border-radius: 12px;
 }
+
+.divider {
+    min-height: 2px;
+    background-color: $divider_color;
+}

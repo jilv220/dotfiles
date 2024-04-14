@@ -8,7 +8,7 @@
         border-radius: 12px;
 
         &:hover {
-            background: $panel_focused_bg_color;
+            background: $button_hover_color;
         }
     }
 
@@ -18,7 +18,7 @@
 
         &:hover {
             margin-left: 0px;
-            background: $panel_focused_bg_color;
+            background: $button_hover_color;
         }
     }
 
@@ -39,7 +39,7 @@
     }
 
     .active {
-        background: $panel_focused_bg_color;
+        background: $button_active_color;
     }
 
     .fullscreen {

@@ -19,3 +19,14 @@
         }
     }
 }
+
+.focused-title {
+    padding: 0 12px;
+    margin-left: 12px;
+    border-radius: 9999px;
+
+    &.fullscreen {
+        background-color: $theme_selected_bg_color;
+        color: $theme_bg_color;
+    }
+}

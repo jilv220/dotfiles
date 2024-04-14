@@ -1,9 +1,11 @@
 import PopupWindow from "widgets/PopupWindow";
 
 const WINDOW_NAME = "calendar";
+const ENABLE_MONTH_DAY = true;
 
+const cmdStr = `date +"${ENABLE_MONTH_DAY ? "%b %e " : ""}%-I:%M %p"`;
 const time = Variable("", {
-  poll: [1000, 'date +"%b %e  %-I:%M %p"'],
+  poll: [1000, cmdStr],
 });
 
 const calendar = Widget.Calendar({
