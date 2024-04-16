@@ -6,6 +6,8 @@ import PopupWindow from "widgets/PopupWindow";
 import Slider from "widgets/Slider";
 
 const audio = await Service.import("audio");
+const mpris = await Service.import("mpris");
+const players = mpris.bind("players");
 
 const WINDOW_NAME = "audio";
 
@@ -76,7 +78,7 @@ const AudioContainer = () => {
 
   const SpeakerLabel = () =>
     Widget.Label({
-      class_name: "volume",
+      class_name: "volume-label",
       label: audio.speaker.bind("volume").as((v) => `${Math.floor(v * 100)}%`),
     });
 
@@ -98,7 +100,7 @@ const AudioContainer = () => {
 
   const MicLabel = () =>
     Widget.Label({
-      class_name: "volume",
+      class_name: "volume-label",
       label: audio.microphone
         .bind("volume")
         .as((v) => `${Math.floor(v * 100)}%`),
@@ -111,16 +113,25 @@ const AudioContainer = () => {
     children: [
       Widget.Box({
         class_name: "volume-container",
-        hexpand: true,
-        children: [SpeakerIcon(20), SpeakerSlider(), SpeakerLabel()],
+        vertical: true,
+        children: [
+          Widget.Box({
+            hexpand: true,
+            children: [SpeakerIcon(20), SpeakerSlider(), SpeakerLabel()],
+          }),
+          Widget.Box({
+            hexpand: true,
+            children: [MicIcon(20), MicSlider(), MicLabel()],
+          }),
+        ],
       }),
-      Widget.Box({
-        class_name: "volume-container",
-        hexpand: true,
-        children: [MicIcon(20), MicSlider(), MicLabel()],
+      Divider({
+        visible: players.as((p) => p.length > 0),
       }),
       Media(),
-      Divider(),
+      Divider({
+        visible: audio.bind("apps").as((sts) => sts.length > 0),
+      }),
       VolumeMixer(),
     ],
   });

@@ -16,7 +16,8 @@ function Player(player: MprisPlayer) {
     class_name: "img",
     vpack: "center",
     css: player.bind("track_cover_url").transform((p) => {
-      return `background-image: url("${p}");`;
+      const artist_fallback = `file://${App.configDir}/res/artist_fallback.png`;
+      return `background-image: url("${p === "" ? artist_fallback : p}");`;
     }),
   });
 

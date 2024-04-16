@@ -24,7 +24,7 @@ label {
 }
 
 .divider {
-  min-height: 2px;
+  min-height: 0.0625rem;
   background-color: shade(@theme_bg_color,1.57);
 }
 
@@ -93,6 +93,69 @@ label {
 }
 .applist .fullscreen .indicator {
   background-color: @theme_bg_color;
+}
+
+/* Audio */
+.audio-popup {
+  padding: 0.75rem 1rem;
+  font-weight: normal;
+}
+.audio-popup .divider {
+  margin: 0.625rem 0;
+}
+.audio-popup .volume-container {
+  font-size: 0.875rem;
+}
+.audio-popup .volume-label {
+  padding-left: 0.25rem;
+}
+
+/* Media = parent of players & sinks(todo) */
+.media {
+  padding: 0.375rem 0;
+}
+.media > .player {
+  margin-top: 0.875rem;
+}
+.media > .player:first-child {
+  margin-top: 0;
+}
+
+.player .title {
+  color: @theme_fg_color;
+  font-size: 0.875rem;
+}
+
+.player .artist {
+  font-size: 12px;
+}
+
+.player .img {
+  min-width: 68px;
+  min-height: 68px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-right: 0.5rem;
+}
+
+.volume-mixer-container .volume-mixer {
+  margin-top: 0rem;
+}
+.volume-mixer-container .volume-mixer .slider-hack {
+  margin-top: 0.4rem;
+}
+.volume-mixer-container .volume-mixer:first-child {
+  margin-top: 0;
+}
+.volume-mixer-container .volume-mixer .volume-mixer-label {
+  font-size: 0.75rem;
+  padding-left: 0.625rem;
+  margin-bottom: -0.4rem;
+}
+.volume-mixer-container .volume-mixer .volume-label {
+  font-size: 0.875rem;
+  padding-left: 0.25rem;
 }
 
 .power-control {
@@ -232,54 +295,6 @@ window.notification-popups box.notifications {
 
 .actions .action-button:last-child {
   margin-right: 0;
-}
-
-/* Audio */
-.audio-popup {
-  padding: 8px 16px;
-  font-weight: normal;
-}
-.audio-popup .divider {
-  margin: 0.8em 0;
-}
-
-.audio-popup .volume-container {
-  font-size: 16px;
-}
-
-.audio-popup .volume {
-  margin-left: 4px;
-}
-
-/* Media = parent of players & sinks(todo) */
-.media {
-  padding: 0.4em 0;
-}
-
-.player {
-  padding: 6px 0px;
-}
-
-.player:last-child {
-  padding: 6px 0px 0px;
-}
-
-.player .title {
-  color: @theme_fg_color;
-  font-size: 16px;
-}
-
-.player .artist {
-  font-size: 12px;
-}
-
-.player .img {
-  min-width: 68px;
-  min-height: 68px;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  margin-right: 6px;
 }
 
 /*# sourceMappingURL=my-style.css.map */

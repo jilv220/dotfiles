@@ -6,6 +6,7 @@
 @use 'mixin' as *;
 @use 'workspaces';
 @use 'applist';
+@use 'audio';
 @use 'power';
 
 $panel_opacity: 0.92;
@@ -108,56 +109,3 @@ window.notification-popups box.notifications {
 .actions .action-button:last-child {
     margin-right: 0;
 }
-
-/* Audio */
-.audio-popup {
-    padding: 8px 16px;
-    font-weight: normal;
-
-    .divider {
-        margin: 0.8em 0;
-    }
-}
-
-.audio-popup .volume-container {
-    font-size: 16px;
-}
-
-.audio-popup .volume {
-    margin-left: 4px;
-}
-
-/* Media = parent of players & sinks(todo) */
-.media {
-    padding: 0.4em 0;
-}
-
-.player {
-    padding: 6px 0px;
-}
-
-.player:last-child {
-    padding: 6px 0px 0px;
-}
-
-.player .title {
-    color: colors-public.$theme_fg_color;
-    font-size: 16px;
-}
-
-.player .artist {
-    font-size: 12px;
-}
-
-.player .img {
-    min-width: 68px;
-    min-height: 68px;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    margin-right: 6px;
-}
-
-// .player button:hover {
-//     background-color: colors-public.$unfocused_borders;
-// }
