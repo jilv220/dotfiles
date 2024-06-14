@@ -40,13 +40,18 @@
     "when": "filesExplorerFocus && !inputFocus"
   },
   {
+    "key": "d",
+    "command": "explorer.newFolder",
+    "when": "filesExplorerFocus && !inputFocus"
+  },
+  {
     "command": "renameFile",
     "key": "r",
     "when": "filesExplorerFocus && !inputFocus"
   },
   {
     "command": "deleteFile",
-    "key": "d",
+    "key": "shift+d",
     "when": "filesExplorerFocus && !inputFocus"
   },
   // EXTRA
